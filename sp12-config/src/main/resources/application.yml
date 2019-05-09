@@ -1,0 +1,26 @@
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+        
+#        git:
+#          uri: https://github.com/luwenhai999/sp-config
+#          searchPaths: config
+          #username: your-username
+          #password: your-password
+    
+server:
+  port: 6001
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
